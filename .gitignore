@@ -4,6 +4,7 @@
 .codegraph/
 .idea/
 .vscode/
+.netlify/
 
 # Dependencies and generated build output
 node_modules/

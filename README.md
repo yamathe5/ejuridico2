@@ -12,6 +12,27 @@ python -m http.server 4173 --bind 127.0.0.1
 
 Visita http://127.0.0.1:4173.
 
+## Publicar en Netlify
+
+El archivo `netlify.toml` configura la preparación y publicación del sitio. No requiere instalar paquetes ni configurar variables secretas.
+
+1. En Netlify, importa el repositorio `yamathe5/ejuridico2` desde GitHub.
+2. Selecciona la rama `main` y deja el directorio base vacío (raíz del repositorio).
+3. Netlify leerá automáticamente estos ajustes:
+   - Comando de construcción: `node scripts/build.mjs`.
+   - Directorio de publicación: `dist`.
+   - Node.js: `22`.
+4. Inicia el despliegue. Los siguientes pushes a `main` se desplegarán automáticamente si está activada la publicación continua.
+
+Para generar la misma salida localmente:
+
+```sh
+node scripts/build.mjs
+python -m http.server 4173 --bind 127.0.0.1 --directory dist
+```
+
+Solo se publican `index.html`, `styles.css`, `script.js` y `assets/`. La carpeta `dist/` es generada y no se sube a Git. El formulario continúa enviando a WhatsApp; no utiliza Netlify Forms ni necesita un servidor. Las anclas de navegación funcionan directamente, por lo que no hace falta una redirección global de SPA.
+
 ## Paleta aprobada
 
 | Color | Código | Uso |
