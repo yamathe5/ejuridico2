@@ -1,0 +1,43 @@
+# Local agent instructions, tools and editor settings
+.agents/
+.codex/
+.codegraph/
+.idea/
+.vscode/
+
+# Dependencies and generated build output
+node_modules/
+dist/
+build/
+coverage/
+.cache/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+.aws/
+
+# Logs, temporary files and OS metadata
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+~$*
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local preview captures; website images in assets/ remain tracked
+vista-previa.jpg
+screenshots/
